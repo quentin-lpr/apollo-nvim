@@ -5,8 +5,8 @@
 # ⌃ Control (or Ctrl)
 
 ## UI
-Show/Hide terminal                    | <C->>
-Show/Hide file tree                   | <C-<>
+Show/Hide terminal                    | <C-<>
+Show/Hide file tree                   | <C-@>
 
 ## Clipboard
 Copy to computer clipboard            | <C-c>
