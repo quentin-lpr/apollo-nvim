@@ -35,7 +35,7 @@ return {
       terminal:toggle()
     end
 
-    vim.keymap.set({ "n", "t" }, "<C->>", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
+    vim.keymap.set({ "n", "t" }, "<C-<>", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
     vim.keymap.set({ "n", "t" }, "²", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
   end,
 }
