@@ -29,5 +29,5 @@ vim.keymap.set({ "n", "t" }, "<C-l>", "<C-\\><C-n><C-W>l", { noremap = true, des
 vim.keymap.set({ "n", "i" }, "<M-CR>", "<Esc>gg=G", { noremap = true, desc = "Reindent entire file" })
 
 -- Others
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Exit terminal mode" })
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Exit terminal mode" })
 vim.keymap.set({ "n", "v" }, "<leader>*", "<Cmd>noh<CR>", { noremap = true, desc = "Remove text highlight after searching" })

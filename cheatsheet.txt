@@ -27,5 +27,5 @@ Go to previous tab                    | <C-i>
 Re-indent entire file                 | <M-CR>
 
 ## Misc
-Exit terminal mode                    | <Esc>
+# Exit terminal mode                    | <Esc>
 Remove text highlight after searching | <leader>*
