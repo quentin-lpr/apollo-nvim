@@ -22,7 +22,7 @@ return {
       lazygit:toggle()
     end
 
-    vim.keymap.set({ "n", "t" }, "<leader>lg", toggle_lazygit, { noremap = true, desc = "Show/Hide Lazygit Window" })
+    vim.keymap.set("n", "<leader>lg", toggle_lazygit, { noremap = true, desc = "Show/Hide Lazygit Window" })
 
     -- Right Terminal
     local terminal = Terminal:new({
@@ -36,5 +36,6 @@ return {
     end
 
     vim.keymap.set({ "n", "t" }, "<C->>", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
+    vim.keymap.set({ "n", "t" }, "²", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
   end,
 }
