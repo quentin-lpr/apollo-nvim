@@ -21,7 +21,7 @@ return {
 				},
 			},
 		})
-		vim.keymap.set({ "n", "i" }, "<C-<>", "<Cmd>Neotree toggle left<CR><Esc>", { noremap = true, desc = "Show Nvim File Tree" })
+		vim.keymap.set({ "n", "i" }, "<C-@>", "<Cmd>Neotree toggle left<CR><Esc>", { noremap = true, desc = "Show Nvim File Tree" })
 		vim.keymap.set("n", "<leader>e", "<Cmd>Neotree focus<CR><Esc>", { noremap = true, desc = "Focus neo-tree" })
 	end,
 }
