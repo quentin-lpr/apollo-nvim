@@ -27,6 +27,8 @@ vim.keymap.set({ "n", "t" }, "<C-l>", "<C-\\><C-n><C-W>l", { noremap = true, des
 
 -- Code
 vim.keymap.set({ "n", "i" }, "<M-CR>", "<Esc>gg=G", { noremap = true, desc = "Reindent entire file" })
+vim.keymap.set('n', 'u', '<Cmd>undo<CR>', { noremap = true, desc = "Undo" })
+vim.keymap.set('n', '<C-r>', '<Cmd>redo<CR>', { noremap = true, desc = "Redo" })
 
 -- Others
 -- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Exit terminal mode" })

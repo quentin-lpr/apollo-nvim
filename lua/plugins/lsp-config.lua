@@ -31,7 +31,7 @@ return {
       vim.keymap.set("n","K", vim.lsp.buf.hover, { noremap = true, desc = "Displays hover information about the symbol under the cursor" })
       vim.keymap.set("n","gd",vim.lsp.buf.definition, { noremap = true, desc = "Jumps to the definition of the symbol under the cursor" })
       vim.keymap.set("n","<leader>ca",vim.lsp.buf.code_action, { noremap = true, desc = "Selects a code action available at the current cursor position" })
-      vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename, { noremap = true, desc = "Rename word under cursor" })
+      vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { noremap = true, desc = "Rename word under cursor" })
     end,
   },
 }
