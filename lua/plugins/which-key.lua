@@ -1,19 +1,23 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {},
-  config = function()
-    require("which-key").setup({
-      preset = "helix",
-      icons = {
-        group = " ",
-        ellipsis = "…",
-        mappings = true,
-        rules = {},
-        colors = true,
-      },
-      mappings = true,
-    })
-    vim.keymap.set("n", "<leader>?", "<Cmd>WhichKey<CR>", { noremap = true, desc = "Show Local Keymaps (which-key)" })
-  end,
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	opts = {},
+	config = function()
+		local wk = require("which-key")
+		wk.setup({
+			preset = "helix",
+			icons = {
+				group = "",
+				ellipsis = "…",
+				mappings = true,
+				rules = {
+					{ plugin = "telescope.nvim", pattern = "telescope", icon = "", color = "white" },
+				},
+				colors = true,
+			},
+			mappings = true,
+		})
+
+		wk.add({ "<leader>?", "<Cmd>WhichKey<CR>", desc = "Show local keymaps", icon = { icon = "󰋖", color = "white" } })
+	end,
 }

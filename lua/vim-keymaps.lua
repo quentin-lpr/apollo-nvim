@@ -1,35 +1,38 @@
 -- Toggle syntax highlighting
 function ToggleAllSyntax()
-  -- Toggle regular syntax highlighting
-  if vim.g.syntax_on then
-    vim.cmd("syntax off")
-  else
-    vim.cmd("syntax on")
-  end
+	-- Toggle regular syntax highlighting
+	if vim.g.syntax_on then
+		vim.cmd("syntax off")
+	else
+		vim.cmd("syntax on")
+	end
 
-  -- Toggle Treesitter highlighting
-  vim.cmd("TSToggle highlight")
+	-- Toggle Treesitter highlighting
+	vim.cmd("TSToggle highlight")
 end
 
-vim.keymap.set("n", "<leader>h", ToggleAllSyntax, { noremap = true, desc = "Toggle All Syntax Highlighting" })
+local wk = require("which-key")
+local keymaps = {
+	{ "<leader>h", ToggleAllSyntax, mode = "n", desc = "Toggle All Syntax Highlighting", icon = { icon = "󰠠", color = "white" } },
 
--- Copy/Paste inside '*' register (macOS)
-vim.keymap.set("v", "<C-c>", '"*y', { noremap = true, desc = "Copy to macOS clipboard" })
-vim.keymap.set({ "n", "i" }, "<C-v>", '<Esc>"*p', { noremap = true, desc = "Paste from macOS clipboard" })
+	-- Copy/Paste inside '*' register (macOS)
+	{ "<C-c>", '"*y', mode = "v", desc = "Copy to macOS clipboard" },
+	{ "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from macOS clipboard" },
 
--- Buffer handling
-vim.keymap.set({ "n", "i" }, "<C-n>", "<Cmd>enew<CR><Esc>", { noremap = true, desc = "Create a new empty buffer" })
-vim.keymap.set({ "n", "i" }, "<C-x>", "<Cmd>bdelete<CR><Esc>", { noremap = true, desc = "Delete current buffer" })
-vim.keymap.set({ "n", "t" }, "<C-h>", "<C-\\><C-n><C-W>h", { noremap = true, desc = "Move to left window" })
-vim.keymap.set({ "n", "t" }, "<C-j>", "<C-\\><C-n><C-W>j", { noremap = true, desc = "Move to bottom window" })
-vim.keymap.set({ "n", "t" }, "<C-k>", "<C-\\><C-n><C-W>k", { noremap = true, desc = "Move to top window" })
-vim.keymap.set({ "n", "t" }, "<C-l>", "<C-\\><C-n><C-W>l", { noremap = true, desc = "Move to right window" })
+	-- Buffer handling
+	{ "<C-n>", "<Cmd>enew<CR><Esc>", mode = { "n", "i" }, desc = "Create a new empty buffer" },
+	{ "<C-x>", "<Cmd>bdelete<CR><Esc>", mode = { "n", "i" }, desc = "Delete current buffer" },
+	{ "<C-h>", "<C-\\><C-n><C-W>h", mode = { "n", "t" }, desc = "Move to left window" },
+	{ "<C-j>", "<C-\\><C-n><C-W>j", mode = { "n", "t" }, desc = "Move to bottom window" },
+	{ "<C-k>", "<C-\\><C-n><C-W>k", mode = { "n", "t" }, desc = "Move to top window" },
+	{ "<C-l>", "<C-\\><C-n><C-W>l", mode = { "n", "t" }, desc = "Move to right window" },
 
--- Code
-vim.keymap.set({ "n", "i" }, "<M-CR>", "<Esc>gg=G", { noremap = true, desc = "Reindent entire file" })
-vim.keymap.set('n', 'u', '<Cmd>undo<CR>', { noremap = true, desc = "Undo" })
-vim.keymap.set('n', '<C-r>', '<Cmd>redo<CR>', { noremap = true, desc = "Redo" })
+	-- Code
+	{ "<M-CR>", "<Esc>gg=G", mode = { "n", "i" }, desc = "Reindent entire file" },
+	{ "u", "<Cmd>undo<CR>", mode = "n", desc = "Undo" },
+	{ "<C-r>", "<Cmd>redo<CR>", mode = "n", desc = "Redo" },
 
--- Others
--- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Exit terminal mode" })
-vim.keymap.set({ "n", "v" }, "<leader>*", "<Cmd>noh<CR>", { noremap = true, desc = "Remove text highlight after searching" })
+	-- Others
+	{ "<leader>*", "<Cmd>noh<CR>", mode = { "n", "v" }, desc = "Remove text highlight after searching", icon = { icon = "󰸱", color = "white" } },
+}
+wk.add(keymaps)
