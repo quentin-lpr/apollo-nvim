@@ -1,6 +1,8 @@
 return {
+  -- Neovim plugin to animate common Neovim actions
   {
     "echasnovski/mini.animate",
+    event = "VeryLazy",
     version = false,
     config = function()
       require("mini.animate").setup({
@@ -32,8 +34,10 @@ return {
       })
     end,
   },
+  -- Neovim plugin to align text interactively
   {
     "echasnovski/mini.align",
+    event = "VeryLazy",
     version = false,
     config = function()
       require("mini.align").setup()

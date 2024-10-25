@@ -1,3 +1,4 @@
+-- A fancy, configurable, notification manager
 return {
   "rcarriga/nvim-notify",
   config = function()

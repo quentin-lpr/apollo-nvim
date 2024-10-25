@@ -1,4 +1,5 @@
 return {
+  -- Plugin to easily install and manage LSP servers, DAP servers, linters, and formatters
 	{
 		"williamboman/mason.nvim",
 		event = "VeryLazy",
@@ -6,6 +7,7 @@ return {
 			require("mason").setup()
 		end,
 	},
+  -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim (primarily used to ensure that the LSP servers are installed)
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = "VeryLazy",
@@ -15,6 +17,7 @@ return {
 			})
 		end,
 	},
+  -- Quickstart configs for Nvim LSP
 	{
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",
@@ -33,11 +36,16 @@ return {
 
 			local wk = require("which-key")
 			wk.add({
-				{ "<leader>lsp", toggle_diagnostics, mode = "n", desc = "Enable/Disable LSP", icon = { icon = "", color = "white" } },
-				{ "K", vim.lsp.buf.hover, mode = "n", desc = "Displays information under the cursor" },
-				{ "gd", vim.lsp.buf.definition, mode = "n", desc = "Jumps to the definition" },
-				{ "<leader>ca", vim.lsp.buf.code_action, mode = "n", desc = "Code actions" },
-				{ "<leader>r", vim.lsp.buf.rename, mode = "n", desc = "Rename", icon = { icon = "󰑕", color = "white" } },
+				{
+					group = "LSP",
+					"<leader>l",
+					{ "<leader>lt", toggle_diagnostics, mode = "n", desc = "Toggle LSP", icon = { icon = "", color = "white" } },
+					{ "<leader>li", vim.lsp.buf.hover, mode = "n", desc = "Displays information", icon = { icon = "", color = "white" } },
+					{ "<leader>ld", vim.lsp.buf.definition, mode = "n", desc = "Jumps to definition", icon = { icon = "", color = "white" } },
+					{ "<leader>la", vim.lsp.buf.code_action, mode = "n", desc = "Code actions", icon = { icon = "", color = "white" } },
+					{ "<leader>lr", vim.lsp.buf.rename, mode = "n", desc = "Rename", icon = { icon = "󰑕", color = "white" } },
+					icon = { icon = "", color = "white" },
+				},
 			})
 		end,
 	},

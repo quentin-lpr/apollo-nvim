@@ -1,3 +1,4 @@
+-- GitHub's Neovim themes
 return {
 	"projekt0n/github-nvim-theme",
 	name = "github-theme",

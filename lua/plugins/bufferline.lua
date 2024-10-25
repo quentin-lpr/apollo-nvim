@@ -1,3 +1,4 @@
+-- A snazzy bufferline for Neovim
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
@@ -18,7 +19,7 @@ return {
 		wk.add({
 			{ "<C-o>", "<Cmd>BufferLineCycleNext<CR>", mode = "n", desc = "Next buffer", icon = { icon = "", color = "white" } },
 			{ "<C-i>", "<Cmd>BufferLineCyclePrev<CR>", mode = "n", desc = "Previous buffer", icon = { icon = "", color = "white" } },
-			{ "<leader>t", toggle_bufferline, mode = "n", desc = "Show/Hide bufferline", icon = { icon = "", color = "white" } },
+			{ "<leader>bt", toggle_bufferline, mode = "n", desc = "Toggle bufferline", icon = { icon = "", color = "white" } },
 		})
 
 		require("bufferline").setup({

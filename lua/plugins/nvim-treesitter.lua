@@ -1,5 +1,7 @@
+-- An incremental parsing system for programming tools
 return {
   "nvim-treesitter/nvim-treesitter",
+  -- event = "VeryLazy",
   build = ":TSUpdate",
   config = function()
     -- require("nvim-treesitter.install").prefer_git = true

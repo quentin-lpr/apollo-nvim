@@ -1,3 +1,4 @@
+-- A blazing fast and easy to configure neovim statusline
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = "nvim-tree/nvim-web-devicons",

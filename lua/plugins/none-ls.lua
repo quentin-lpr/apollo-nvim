@@ -1,3 +1,4 @@
+-- null-ls.nvim reloaded / Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 return {
   "nvimtools/none-ls.nvim",
   event = "VeryLazy",
@@ -15,11 +16,6 @@ return {
         }),
         -- require("none-ls.diagnostics.eslint_d"),
       },
-    })
-
-    local wk = require("which-key")
-    wk.add({
-      { "<leader>bf", vim.lsp.buf.format, mode = "n", desc = "Format buffer", icon = { icon = "󰉼", color = "white" } },
     })
   end,
 }
