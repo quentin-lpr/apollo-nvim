@@ -18,7 +18,5 @@ return {
 		})
 
 		wk.add({ "<leader>?", "<Cmd>WhichKey<CR>", desc = "Show local keymaps", icon = { icon = "󰋖", color = "white" } })
-		wk.add({ "<leader>p", "<Cmd>WhichKey<CR>", desc = "Prev text" })
-		wk.add({ "<leader>k", "<Cmd>WhichKey<CR>", desc = "terminal text" })
 	end,
 }
