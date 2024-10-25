@@ -1,6 +1,7 @@
 -- Neovim plugin to manage the file system and other tree like structures
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	event = "VeryLazy",
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
