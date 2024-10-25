@@ -4,4 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number relativenumber")
 vim.cmd("set nu rnu")
+vim.cmd("set splitbelow")
+vim.cmd("set splitright")
+vim.opt.showtabline = 0
 vim.cmd.colorscheme("github_dark_default")
