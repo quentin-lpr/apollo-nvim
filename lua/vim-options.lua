@@ -7,4 +7,4 @@ vim.cmd("set nu rnu")
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 vim.opt.showtabline = 0
-vim.cmd.colorscheme("github_dark_default")
+vim.cmd.colorscheme("github_dark_high_contrast")
