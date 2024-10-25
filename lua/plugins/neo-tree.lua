@@ -1,5 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
+	event = "VeryLazy",
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -21,7 +22,11 @@ return {
 				},
 			},
 		})
-		vim.keymap.set({ "n", "i" }, "<C-@>", "<Cmd>Neotree toggle left<CR><Esc>", { noremap = true, desc = "Show Nvim File Tree" })
-		vim.keymap.set("n", "<leader>e", "<Cmd>Neotree focus<CR><Esc>", { noremap = true, desc = "Focus neo-tree" })
+
+		local wk = require("which-key")
+		wk.add({
+			{ "<C-@>", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
+			{ "<leader>e", "<Cmd>Neotree focus<CR><Esc>", mode = "n", desc = "Focus neo-tree", icon = { icon = "󰙅", color = "white" } },
+		})
 	end,
 }

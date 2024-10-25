@@ -1,9 +1,11 @@
 return {
 	{
 		"github/copilot.vim",
+		event = "VeryLazy",
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		event = "VeryLazy",
 		branch = "canary",
 		dependencies = {
 			{ "github/copilot.vim" },
@@ -22,14 +24,24 @@ return {
 			local chat = require("CopilotChat")
 			chat.setup(opts)
 
-			vim.keymap.set({ "n", "v" }, "<leader>gc", chat.toggle, { noremap = true })
-			vim.keymap.set({ "n", "v" }, "<leader>ga", function()
+			local function ask_copilot()
 				chat.ask("Show me something interesting", {
 					callback = function(response)
 						print("Response:", response)
 					end,
 				})
-			end, { noremap = true })
+			end
+
+			local wk = require("which-key")
+			wk.add({
+				{
+					group = "Copilot",
+					"<leader>g",
+					{ "<leader>gc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
+					{ "<leader>ga", ask_copilot, mode = { "n", "v" }, desc = "Ask Copilot", icon = { icon = "󰠠", color = "white" } },
+					icon = { icon = "󰠠", color = "white" },
+				},
+			})
 		end,
 	},
 }

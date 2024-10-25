@@ -12,7 +12,7 @@ function ToggleAllSyntax()
 end
 
 local wk = require("which-key")
-local keymaps = {
+wk.add({
 	{ "<leader>h", ToggleAllSyntax, mode = "n", desc = "Toggle All Syntax Highlighting", icon = { icon = "󰠠", color = "white" } },
 
 	-- Copy/Paste inside '*' register (macOS)
@@ -33,6 +33,6 @@ local keymaps = {
 	{ "<C-r>", "<Cmd>redo<CR>", mode = "n", desc = "Redo" },
 
 	-- Others
-	{ "<leader>*", "<Cmd>noh<CR>", mode = { "n", "v" }, desc = "Remove text highlight after searching", icon = { icon = "󰸱", color = "white" } },
-}
-wk.add(keymaps)
+	{ "<Esc>", "<Cmd>noh<CR>", mode = "n", desc = "Remove text highlight after searching", icon = { icon = "󰸱", color = "white" } },
+	-- { "<leader>*", "<Cmd>noh<CR>", mode = { "n", "v" }, desc = "Remove text highlight after searching", icon = { icon = "󰸱", color = "white" } },
+})

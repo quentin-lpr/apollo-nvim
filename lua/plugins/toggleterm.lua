@@ -13,7 +13,7 @@ return {
 		end
 
 		require("toggleterm").setup({
-			size = 70,
+			size = 70, -- Change this value to adjust width when terminal is vertical
 			shell = shell,
 		})
 
@@ -32,8 +32,6 @@ return {
 			lazygit:toggle()
 		end
 
-		vim.keymap.set("n", "<leader>lg", toggle_lazygit, { noremap = true, desc = "Show/Hide Lazygit Window" })
-
 		-- Float Terminal
 		local terminal = Terminal:new({
 			direction = "float",
@@ -47,10 +45,18 @@ return {
 		end
 
 		local os_name = vim.loop.os_uname().sysname
+		local wk = require("which-key")
+		wk.add({
+			{ "<leader>lg", toggle_lazygit, mode = "n", desc = "Show/Hide Lazygit Window", icon = { icon = "", color = "white" } },
+		})
 		if os_name == "Windows_NT" then
-			vim.keymap.set({ "n", "t" }, "²", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
+			wk.add({
+				{ "²", toggle_terminal, mode = { "n", "t" }, desc = "Show/Hide Terminal", icon = { icon = "", color = "white" } },
+			})
 		elseif os_name == "Darwin" then
-			vim.keymap.set({ "n", "t" }, "<C-<>", toggle_terminal, { noremap = true, desc = "Show/Hide Terminal" })
+			wk.add({
+				{ "@", toggle_terminal, mode = { "n", "t" }, desc = "Show/Hide Terminal", icon = { icon = "", color = "white" } },
+			})
 		end
 	end,
 }

@@ -1,6 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    event = "VeryLazy",
     tag = "0.1.8",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
@@ -44,7 +45,7 @@ return {
       -- Keymaps
       local builtin = require("telescope.builtin")
       local wk = require("which-key")
-      local keymaps = {
+      wk.add({
         {
           group = "Telescope",
           "<leader>f",
@@ -58,12 +59,12 @@ return {
           { "<leader>fn", "<Cmd>Telescope notify<CR>", mode = "n", desc = "Notifications", icon = { icon = "󰎟", color = "white" } },
           icon = { icon = "", color = "white" },
         },
-      }
-      wk.add(keymaps)
+      })
     end,
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
+    event = "VeryLazy",
     config = function()
       require("telescope").setup({
         extensions = {

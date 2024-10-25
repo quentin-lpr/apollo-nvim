@@ -1,37 +1,44 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls" },
-      })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
+	{
+		"williamboman/mason.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls", "ts_ls" },
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		event = "VeryLazy",
+		config = function()
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({})
+			lspconfig.ts_ls.setup({})
 
-      local function toggle_diagnostics()
-        if vim.diagnostic.is_disabled() then
-          vim.diagnostic.enable()
-        else
-          vim.diagnostic.disable()
-        end
-      end
-      vim.keymap.set("n", "<leader>lsp", toggle_diagnostics, { noremap = true, desc = "Enable/Disable LSP" })
-      vim.keymap.set("n","K", vim.lsp.buf.hover, { noremap = true, desc = "Displays hover information about the symbol under the cursor" })
-      vim.keymap.set("n","gd",vim.lsp.buf.definition, { noremap = true, desc = "Jumps to the definition of the symbol under the cursor" })
-      vim.keymap.set("n","<leader>ca",vim.lsp.buf.code_action, { noremap = true, desc = "Selects a code action available at the current cursor position" })
-      vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { noremap = true, desc = "Rename word under cursor" })
-    end,
-  },
+			local function toggle_diagnostics()
+				if vim.diagnostic.is_disabled() then
+					vim.diagnostic.enable()
+				else
+					vim.diagnostic.disable()
+				end
+			end
+
+			local wk = require("which-key")
+			wk.add({
+				{ "<leader>lsp", toggle_diagnostics, mode = "n", desc = "Enable/Disable LSP", icon = { icon = "", color = "white" } },
+				{ "K", vim.lsp.buf.hover, mode = "n", desc = "Displays information under the cursor" },
+				{ "gd", vim.lsp.buf.definition, mode = "n", desc = "Jumps to the definition" },
+				{ "<leader>ca", vim.lsp.buf.code_action, mode = "n", desc = "Code actions" },
+				{ "<leader>r", vim.lsp.buf.rename, mode = "n", desc = "Rename", icon = { icon = "󰑕", color = "white" } },
+			})
+		end,
+	},
 }
