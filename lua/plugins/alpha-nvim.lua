@@ -22,8 +22,7 @@ return {
 			dashboard.button("q", "󰈆 Quit", ":qa<CR>"),
 		}
 
-		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#808080" })
-		-- dashboard.section.header.opts.hl = "DashboardHeader"
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#6A6D7B" })
 		dashboard.section.header.opts.hl = "AlphaHeader"
 		dashboard.config.layout = {
 			{ type = "padding", val = vim.fn.max({ 15, vim.fn.floor(vim.fn.winheight(0) * 0.2) }) },
