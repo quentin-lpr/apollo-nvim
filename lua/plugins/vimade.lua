@@ -2,9 +2,7 @@
 return {
   "TaDaa/vimade",
   event = "VeryLazy",
-  config = function()
-    vim.g.vimade = {
-      fadelevel = 0.6,
-    }
-  end,
+  opts = {
+    fadelevel = 0.5,
+  }
 }
