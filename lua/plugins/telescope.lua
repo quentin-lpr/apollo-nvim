@@ -47,6 +47,9 @@ return {
               i = {
                 ["<CR>"] = "file_vsplit",
               },
+              n = {
+                ["<CR>"] = "file_vsplit",
+              },
             },
           },
         },
