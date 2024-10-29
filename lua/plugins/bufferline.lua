@@ -1,6 +1,7 @@
 -- A snazzy bufferline for Neovim
 return {
 	"akinsho/bufferline.nvim",
+	event = "BufReadPre",
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
