@@ -1,6 +1,7 @@
 -- A fancy, configurable, notification manager
 return {
   "rcarriga/nvim-notify",
+  event = "VeryLazy",
   config = function()
     vim.notify = require("notify").setup({
       fps = 60,

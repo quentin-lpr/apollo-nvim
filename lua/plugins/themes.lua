@@ -2,6 +2,7 @@ return {
 	-- GitHub's Neovim themes
 	{
 		"projekt0n/github-nvim-theme",
+    lazy = true,
 		name = "github-theme",
 		priority = 1000,
 		opts = {},
@@ -34,6 +35,7 @@ return {
 	{
 		{
 			"catppuccin/nvim",
+      lazy = true,
 			name = "catppuccin",
 			priority = 1000,
 			opts = {
