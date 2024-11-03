@@ -37,7 +37,7 @@ return {
 		-- Float Terminal
 		local terminal = Terminal:new({
 			direction = "float",
-			float_opts = { border = "double" },
+			float_opts = { border = "curved" },
 			on_open = function()
 				vim.cmd("startinsert!")
 			end,
