@@ -20,7 +20,7 @@ return {
 			debug = false,
 			window = {
 				layout = "float",
-				border = "double",
+				border = "rounded",
 				title = "Copilot Chat",
 			},
 		},

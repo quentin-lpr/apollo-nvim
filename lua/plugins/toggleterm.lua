@@ -25,7 +25,7 @@ return {
 		local lazygit = Terminal:new({
 			cmd = "lazygit",
 			direction = "float",
-			float_opts = { border = "double" },
+			float_opts = { border = "curved" },
 			on_open = function()
 				vim.cmd("startinsert!")
 			end,
