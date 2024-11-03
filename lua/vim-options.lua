@@ -7,5 +7,4 @@ vim.cmd("set nu rnu")
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 vim.cmd("set nowrap")
-vim.opt.showtabline = 0
 vim.cmd.colorscheme("catppuccin")
