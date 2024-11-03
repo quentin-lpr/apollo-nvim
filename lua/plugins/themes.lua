@@ -2,7 +2,7 @@ return {
 	-- GitHub's Neovim themes
 	{
 		"projekt0n/github-nvim-theme",
-    lazy = true,
+		lazy = true,
 		name = "github-theme",
 		priority = 1000,
 		opts = {},
@@ -20,7 +20,7 @@ return {
 	{
 		{
 			"catppuccin/nvim",
-      lazy = true,
+			lazy = true,
 			name = "catppuccin",
 			priority = 1000,
 			opts = {
@@ -29,6 +29,14 @@ return {
 						base = "#0c0c0c",
 					},
 				},
+				integrations = {
+					alpha = true,
+				},
+				custom_highlights = function()
+					return {
+						AlphaHeader = { fg = "#818596" },
+					}
+				end,
 			},
 		},
 	},
