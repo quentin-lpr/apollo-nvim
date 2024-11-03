@@ -5,6 +5,7 @@ return {
 	opts = {
 		options = {
 			theme = "iceberg_dark",
+			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_c = {
