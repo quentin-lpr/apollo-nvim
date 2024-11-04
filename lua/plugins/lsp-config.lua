@@ -9,16 +9,20 @@ return {
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		event = "VeryLazy",
-		opts = {
-			ensure_installed = {
-				"clangd",
-				"biome",
-				"lua-language-server",
-				"stylua",
-				"tailwindcss-language-server",
-				"typescript-language-server",
-			},
-		},
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"biome",
+					"clangd",
+					"lua-language-server",
+					"stylua",
+					"tailwindcss-language-server",
+					-- "typescript-language-server",
+				},
+			})
+			vim.cmd("MasonToolsClean")
+			vim.cmd("MasonToolsUpdate")
+		end,
 	},
 	-- Quickstart configs for Nvim LSP
 	{
@@ -28,7 +32,8 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.ts_ls.setup({ capabilities = capabilities })
+			-- lspconfig.ts_ls.setup({ capabilities = capabilities })
+			lspconfig.biome.setup({ capabilities = capabilities })
 			lspconfig.tailwindcss.setup({ capabilities = capabilities })
 
 			local function toggle_diagnostics()
