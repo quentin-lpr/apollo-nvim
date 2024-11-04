@@ -27,6 +27,8 @@ return {
 				color_overrides = {
 					all = {
 						base = "#0c0c0c",
+						mantle = "#131313",
+						crust = "#1c1c1c",
 					},
 				},
 				integrations = {
