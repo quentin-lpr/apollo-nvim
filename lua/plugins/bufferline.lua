@@ -49,11 +49,6 @@ return {
     -- 	vim.opt.showtabline = (buf_count > 1) and 2 or 0
     -- end
 
-    -- vim.api.nvim_create_autocmd({ "BufAdd", "BufRead" }, {
-    -- 	callback = update_bufferline,
-    -- })
-
-    -- Hide the bufferline on startup screen
     -- vim.api.nvim_create_autocmd("FileType", {
     -- 	pattern = "alpha",
     -- 	callback = function()
@@ -61,7 +56,20 @@ return {
     -- 	end,
     -- })
     --
-    -- Show the bufferline after quitting startup screen
+    -- vim.api.nvim_create_autocmd("BufUnload", {
+    -- 	buffer = 0,
+    -- 	callback = function()
+    -- 		vim.opt.showtabline = 2
+    -- 	end,
+    -- })
+
+    -- vim.api.nvim_create_autocmd("FileType", {
+    -- 	pattern = "alpha",
+    -- 	callback = function()
+    -- 		vim.opt.showtabline = 0
+    -- 	end,
+    -- })
+    --
     -- vim.api.nvim_create_autocmd("BufUnload", {
     -- 	buffer = 0,
     -- 	callback = function()
