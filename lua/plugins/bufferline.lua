@@ -25,8 +25,20 @@ return {
     })
 
     require("bufferline").setup({
+      highlights = {
+        buffer_selected = {
+          underline = true,
+          sp = "#51a0cf",
+        },
+        indicator_selected = {
+          underline = true,
+          sp = "#51a0cf",
+        },
+      },
       options = {
-        show_tab_indicators = false,
+        indicator = {
+          style = "underline",
+        },
         offsets = {
           {
             filetype = "neo-tree",
