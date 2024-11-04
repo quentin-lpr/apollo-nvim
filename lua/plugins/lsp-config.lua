@@ -11,7 +11,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"clangd",
-				"eslint_d",
+				"biome",
 				"lua-language-server",
 				"stylua",
 				"tailwindcss-language-server",
