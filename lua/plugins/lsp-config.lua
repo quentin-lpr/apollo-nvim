@@ -8,6 +8,7 @@ return {
 	-- Install and upgrade third party tools automatically
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
 				"clangd",
