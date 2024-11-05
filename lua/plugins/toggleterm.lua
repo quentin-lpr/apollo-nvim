@@ -1,7 +1,7 @@
 -- A neovim plugin to help easily manage multiple terminal windows
 return {
 	"akinsho/toggleterm.nvim",
-  event = "VeryLazy",
+	event = "VeryLazy",
 	version = "*",
 	opts = {},
 	config = function()
@@ -50,6 +50,7 @@ return {
 		local wk = require("which-key")
 		wk.add({
 			{ "<leader>lg", toggle_lazygit, mode = "n", desc = "Toggle Lazygit Window", icon = { icon = "", color = "white" } },
+			{ "<C-q>", "<C-\\><C-n>", mode = "t", desc = "Exit terminal mode" },
 		})
 		if os_name == "Windows_NT" then
 			wk.add({
