@@ -6,6 +6,7 @@ return {
     local custom_iceberg_dark = require("lualine.themes.iceberg_dark")
 
     custom_iceberg_dark.normal.c.bg = "#0c0c0c"
+    custom_iceberg_dark.inactive.c.bg = "#0c0c0c"
 
     require("lualine").setup({
       options = {
