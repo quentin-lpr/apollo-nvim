@@ -20,6 +20,7 @@ wk.add({
 	{ "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from clipboard", icon = { icon = "", color = "white" } },
 
 	-- Buffer handling
+	{ "<C-s>", "<Cmd>w<CR><Esc>", mode = { "n", "i", "v" }, desc = "Save", icon = { icon = "󰆓", color = "white" } },
 	{ "<C-n>", "<Cmd>enew<CR><Esc>", mode = { "n", "i" }, desc = "Create a new empty buffer", icon = { icon = "󱧕", color = "white" } },
 	{ "<C-x>", "<Cmd>bdelete<CR><Esc>", mode = { "n", "i" }, desc = "Delete current buffer", icon = { icon = "󱧖", color = "white" } },
 	{ "<C-h>", "<C-\\><C-n><C-W>h", mode = { "n", "t" }, desc = "Move to left window", icon = { icon = "", color = "white" } },
