@@ -15,9 +15,9 @@ local wk = require("which-key")
 wk.add({
 	{ "<leader>h", ToggleAllSyntax, mode = "n", desc = "Toggle All Syntax Highlighting", icon = { icon = "󰠠", color = "white" } },
 
-	-- Copy/Paste inside '*' register (macOS)
-	{ "<C-c>", '"*y', mode = "v", desc = "Copy to macOS clipboard", icon = { icon = "", color = "white" } },
-	{ "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from macOS clipboard", icon = { icon = "", color = "white" } },
+	-- Copy/Paste inside '*' register
+	{ "<C-c>", '"*y', mode = "v", desc = "Copy to clipboard", icon = { icon = "", color = "white" } },
+	{ "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from clipboard", icon = { icon = "", color = "white" } },
 
 	-- Buffer handling
 	{ "<C-n>", "<Cmd>enew<CR><Esc>", mode = { "n", "i" }, desc = "Create a new empty buffer", icon = { icon = "󱧕", color = "white" } },
