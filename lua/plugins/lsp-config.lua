@@ -35,9 +35,9 @@ return {
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         -- Disable ts_ls diagnostics while keeping completion snippets
-        handlers = {
-          ["textDocument/publishDiagnostics"] = function() end,
-        },
+        -- handlers = {
+        --   ["textDocument/publishDiagnostics"] = function() end,
+        -- },
       })
       lspconfig.biome.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
