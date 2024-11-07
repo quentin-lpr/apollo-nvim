@@ -38,8 +38,5 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {},
-    -- config = function()
-    --   require("mini.align").setup()
-    -- end,
   },
 }

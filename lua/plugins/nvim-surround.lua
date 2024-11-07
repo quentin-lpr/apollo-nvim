@@ -2,14 +2,14 @@ return {
   -- Add/change/delete surrounding delimiter pairs with ease
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
+    event = "BufReadPre",
     version = "*",
     opts = {},
   },
   -- A Neovim plugin which acts as a helper or training aid for kylechui/nvim-surround
   {
     "roobert/surround-ui.nvim",
-    event = "VeryLazy",
+    event = "BufReadPre",
     dependencies = {
       "kylechui/nvim-surround",
       "folke/which-key.nvim",

@@ -2,14 +2,14 @@
 return {
 	{
 		"github/copilot.vim",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		config = function()
 			vim.cmd("Copilot disable")
 		end,
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		branch = "canary",
 		dependencies = {
 			{ "github/copilot.vim" },

@@ -1,5 +1,6 @@
 return {
 	"laytan/tailwind-sorter.nvim",
+  enabled = false,
 	event = "BufReadPre",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",

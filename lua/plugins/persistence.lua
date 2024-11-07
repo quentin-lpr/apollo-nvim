@@ -1,6 +1,7 @@
 -- Simple session management for Neovim
 return {
   "folke/persistence.nvim",
+  enabled = false,
   event = "BufReadPre",
   opts = {},
   config = function()
