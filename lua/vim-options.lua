@@ -1,3 +1,4 @@
+vim.cmd("set autoread")
 vim.cmd("set mouse=")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
