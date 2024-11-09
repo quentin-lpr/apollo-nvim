@@ -17,12 +17,20 @@ return {
 		},
 		build = "make tiktoken",
 		opts = {
-			debug = false,
+			debug = true,
 			window = {
 				layout = "float",
 				border = "rounded",
 				title = "Copilot Chat",
 			},
+			model = "gpt-4o",
+			question_header = "  User ",
+			answer_header = "  Copilot ",
+			error_header = "  Error ",
+			auto_insert_mode = true,
+			insert_at_end = true,
+      context = "buffers",
+      highlight_selection = false,
 		},
 		config = function(_, opts)
 			local chat = require("CopilotChat")
@@ -41,8 +49,8 @@ return {
 				{
 					group = "Copilot",
 					"<leader>g",
-					{ "<leader>gc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
-					{ "<leader>ga", ask_copilot, mode = { "n", "v" }, desc = "Ask Copilot", icon = { icon = "󰠠", color = "white" } },
+					{ "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
+					{ "<leader>ca", ask_copilot, mode = { "n", "v" }, desc = "Ask Copilot", icon = { icon = "󰠠", color = "white" } },
 					icon = { icon = "󰠠", color = "white" },
 				},
 			})
