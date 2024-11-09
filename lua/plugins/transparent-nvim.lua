@@ -5,6 +5,6 @@ return {
     transparent.setup()
 
     local wk = require("which-key")
-    wk.add({ "<leader>t", transparent.toggle, mode = "n", desc = "Toggle transparency", icon = { icon = "󰂵", color = "white" } })
+    wk.add({ "<C-t>", transparent.toggle, mode = "n", desc = "Toggle transparency", icon = { icon = "󰂵", color = "white" } })
   end,
 }

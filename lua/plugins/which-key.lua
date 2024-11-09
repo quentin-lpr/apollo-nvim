@@ -11,6 +11,7 @@ return {
         group = "",
         rules = {
           { pattern = "surround", icon = "󰅪", color = "white" },
+          { pattern = "cursor", icon = "", color = "white" },
         },
       },
     })
