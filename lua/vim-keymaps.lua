@@ -22,7 +22,7 @@ wk.add({
 	-- Buffer handling
 	{ "<C-s>", "<Cmd>w<CR><Esc>", mode = { "n", "i", "v" }, desc = "Save", icon = { icon = "󰆓", color = "white" } },
 	{ "<F5>", "<Cmd>e<CR><Esc>", mode = { "n", "i", "v" }, desc = "Refresh file", icon = { icon = "", color = "white" } },
-	{ "<C-n>", "<Cmd>enew<CR><Esc>", mode = { "n", "i" }, desc = "Create a new empty buffer", icon = { icon = "󱧕", color = "white" } },
+	-- { "<C-n>", "<Cmd>enew<CR><Esc>", mode = { "n", "i" }, desc = "Create a new empty buffer", icon = { icon = "󱧕", color = "white" } },
 	{ "<C-x>", "<Cmd>bdelete<CR><Esc>", mode = { "n", "i" }, desc = "Delete current buffer", icon = { icon = "󱧖", color = "white" } },
 	{ "<C-h>", "<C-\\><C-n><C-W>h", mode = { "n", "t" }, desc = "Move to left window", icon = { icon = "", color = "white" } },
 	{ "<C-j>", "<C-\\><C-n><C-W>j", mode = { "n", "t" }, desc = "Move to bottom window", icon = { icon = "", color = "white" } },
