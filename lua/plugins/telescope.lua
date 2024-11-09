@@ -60,19 +60,19 @@ return {
       })
 
       -- Keymaps
-      local builtin = require("telescope.builtin")
+      local telescope = require("telescope.builtin")
       local wk = require("which-key")
       wk.add({
         {
           group = "Telescope",
           "<leader>f",
-          { "<leader>ff", builtin.find_files, mode = "n", desc = "Find files", icon = { icon = "", color = "white" } },
-          { "<leader>fg", builtin.live_grep, mode = "n", desc = "Grep", icon = { icon = "󰍇", color = "white" } },
-          { "<leader>fs", builtin.grep_string, mode = "n", desc = "Grep string", icon = { icon = "󰍇", color = "white" } },
-          { "<leader>fb", builtin.buffers, mode = "n", desc = "Buffers", icon = { icon = "", color = "white" } },
-          { "<leader>fh", builtin.help_tags, mode = "n", desc = "Help", icon = { icon = "󰋖", color = "white" } },
-          { "<leader>fd", builtin.diagnostics, mode = "n", desc = "Diagnostics", icon = { icon = "", color = "white" } },
-          { "<leader>ft", builtin.filetypes, mode = "n", desc = "File Types", icon = { icon = "", color = "white" } },
+          { "<leader>ff", telescope.find_files, mode = "n", desc = "Find files", icon = { icon = "", color = "white" } },
+          { "<leader>fg", telescope.live_grep, mode = "n", desc = "Grep", icon = { icon = "󰍇", color = "white" } },
+          { "<leader>fs", telescope.grep_string, mode = "n", desc = "Grep string", icon = { icon = "󰍇", color = "white" } },
+          { "<leader>fb", telescope.buffers, mode = "n", desc = "Buffers", icon = { icon = "", color = "white" } },
+          { "<leader>fh", telescope.help_tags, mode = "n", desc = "Help", icon = { icon = "󰋖", color = "white" } },
+          { "<leader>fd", telescope.diagnostics, mode = "n", desc = "Diagnostics", icon = { icon = "", color = "white" } },
+          { "<leader>ft", telescope.filetypes, mode = "n", desc = "File Types", icon = { icon = "", color = "white" } },
           { "<leader>fn", "<Cmd>Telescope notify<CR>", mode = "n", desc = "Notifications", icon = { icon = "󰎟", color = "white" } },
           icon = { icon = "", color = "white" },
         },

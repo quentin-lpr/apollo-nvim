@@ -10,7 +10,7 @@ return {
       need = 1,
       branch = true,
     })
-    local builtin = require("persistence")
+    local persistence = require("persistence")
 
     local wk = require("which-key")
     wk.add({
@@ -18,9 +18,9 @@ return {
         group = "Session",
         "<leader>q",
         -- { "<leader>qs", builtin.load,   mode = "n", desc = "Load last session" },
-        { "<leader>qS", builtin.select, mode = "n", desc = "Select session to load" },
-        { "<leader>ql", builtin.load,   mode = "n", desc = "Load last session" },
-        { "<leader>qd", builtin.stop,   mode = "n", desc = "Stop persistence" },
+        { "<leader>qS", persistence.select, mode = "n", desc = "Select session to load" },
+        { "<leader>ql", persistence.load,   mode = "n", desc = "Load last session" },
+        { "<leader>qd", persistence.stop,   mode = "n", desc = "Stop persistence" },
         icon = { icon = "", color = "white" },
       },
     })
