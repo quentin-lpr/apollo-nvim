@@ -1,3 +1,4 @@
+-- A simple popup display that provides breadcrumbs feature using LSP serve
 return {
 	"SmiteshP/nvim-navbuddy",
 	event = "BufReadPre",

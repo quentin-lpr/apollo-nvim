@@ -1,3 +1,4 @@
+-- Not UFO in the sky, but an ultra fold in Neovim
 return {
 	"kevinhwang91/nvim-ufo",
 	event = "BufReadPre",

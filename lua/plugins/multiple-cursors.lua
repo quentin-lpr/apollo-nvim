@@ -1,3 +1,4 @@
+-- A multi-cursor plugin for Neovim that works in normal, insert/replace, or visual modes, and with almost every command
 return {
   {
     "brenton-leighton/multiple-cursors.nvim",

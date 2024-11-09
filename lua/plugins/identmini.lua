@@ -1,3 +1,4 @@
+-- A minimal and blazing fast indentline plugin
 return {
   "nvimdev/indentmini.nvim",
   enabled = false,

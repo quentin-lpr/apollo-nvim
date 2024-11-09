@@ -1,3 +1,4 @@
+-- A Neovim plugin hiding your colorcolumn when unneeded.
 return {
 	"m4xshen/smartcolumn.nvim",
 	event = "BufReadPre",
