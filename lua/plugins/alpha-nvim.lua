@@ -17,8 +17,9 @@ return {
 		}
 
 		dashboard.section.buttons.val = {
-			dashboard.button("f", "󰍉 Find file", ":Telescope find_files<CR>"),
-			dashboard.button("q", "󰈆 Quit", ":qa<CR>"),
+			dashboard.button("ff", "󰍉  Find file", "<Cmd>Telescope find_files<CR>"),
+			dashboard.button("fg", "  Grep", "<Cmd>Telescope live_grep<CR>"),
+			dashboard.button("q", "󰈆  Quit", "<Cmd>qa<CR>"),
 		}
 
 		dashboard.section.header.opts.hl = "AlphaHeader"
