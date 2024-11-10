@@ -29,6 +29,7 @@ return {
 						base = "#0c0c0c",
 						mantle = "#131313",
 						crust = "#1c1c1c",
+						surface1 = "#2c2c2c",
 					},
 				},
 				integrations = {
