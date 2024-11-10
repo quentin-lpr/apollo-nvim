@@ -20,17 +20,24 @@ return {
 			debug = true,
 			window = {
 				layout = "float",
+				width = 0.9,
+				height = 0.9,
 				border = "rounded",
 				title = "Copilot Chat",
 			},
-			model = "gpt-4o",
+			mappings = {
+				close = {
+					normal = "<Esc>",
+				},
+			},
+			-- model = "gpt-4o",
 			question_header = "  User ",
 			answer_header = "  Copilot ",
 			error_header = "  Error ",
 			auto_insert_mode = true,
 			insert_at_end = true,
-      context = "buffers",
-      highlight_selection = false,
+			context = "buffers",
+			highlight_selection = false,
 		},
 		config = function(_, opts)
 			local chat = require("CopilotChat")
