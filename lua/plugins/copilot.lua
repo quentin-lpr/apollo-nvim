@@ -17,7 +17,7 @@ return {
 		},
 		build = "make tiktoken",
 		opts = {
-			debug = true,
+			debug = false,
 			window = {
 				layout = "float",
 				width = 0.9,
@@ -30,7 +30,7 @@ return {
 					normal = "<Esc>",
 				},
 			},
-			-- model = "gpt-4o",
+			model = "claude-3.5-sonnet",
 			question_header = "  User ",
 			answer_header = "  Copilot ",
 			error_header = "  Error ",
@@ -43,21 +43,12 @@ return {
 			local chat = require("CopilotChat")
 			chat.setup(opts)
 
-			local function ask_copilot()
-				chat.ask("Show me something interesting", {
-					callback = function(response)
-						print("Response:", response)
-					end,
-				})
-			end
-
 			local wk = require("which-key")
 			wk.add({
 				{
 					group = "Copilot",
 					"<leader>g",
 					{ "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
-					{ "<leader>ca", ask_copilot, mode = { "n", "v" }, desc = "Ask Copilot", icon = { icon = "󰠠", color = "white" } },
 					icon = { icon = "󰠠", color = "white" },
 				},
 			})
