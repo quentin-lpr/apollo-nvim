@@ -28,10 +28,6 @@ wk.add({
 	{ "<C-j>", "<C-\\><C-n><C-W>j", mode = { "n", "t" }, desc = "Move to bottom window", icon = { icon = "", color = "white" } },
 	{ "<C-k>", "<C-\\><C-n><C-W>k", mode = { "n", "t" }, desc = "Move to top window", icon = { icon = "", color = "white" } },
 	{ "<C-l>", "<C-\\><C-n><C-W>l", mode = { "n", "t" }, desc = "Move to right window", icon = { icon = "", color = "white" } },
-	{ "<C-S-Up>", "<Cmd>m -2<CR>", mode = "n", desc = "Move line up", icon = { icon = "", color = "white" } },
-	{ "<C-S-Up>", ":m '<-2<CR>gv=gv", mode = "v", desc = "Move selection up", icon = { icon = "", color = "white" } },
-	{ "<C-S-Down>", "<Cmd>m +1<CR>", mode = "n", desc = "Move line down", icon = { icon = "", color = "white" } },
-	{ "<C-S-Down>", ":m '>+1<CR>gv=gv", mode = "v", desc = "Move selection down", icon = { icon = "", color = "white" } },
 	{
 		group = "Buffer",
 		"<leader>b",
