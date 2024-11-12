@@ -1,7 +1,7 @@
 -- An incremental parsing system for programming tools
 return {
   "nvim-treesitter/nvim-treesitter",
-	event = "BufReadPre",
+	event = "VeryLazy",
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({

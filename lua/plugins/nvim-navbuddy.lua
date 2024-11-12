@@ -1,7 +1,7 @@
 -- A simple popup display that provides breadcrumbs feature using LSP serve
 return {
 	"SmiteshP/nvim-navbuddy",
-	event = "BufReadPre",
+	event = "VeryLazy",
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"SmiteshP/nvim-navic",

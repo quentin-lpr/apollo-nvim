@@ -2,12 +2,12 @@ return {
   -- nvim-cmp source for neovim builtin LSP client
 	{
 		"hrsh7th/cmp-nvim-lsp",
-		event = "BufReadPre",
+		event = "VeryLazy",
 	},
   -- Snippet Engine for Neovim written in Lua
 	{
 		"L3MON4D3/LuaSnip",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -17,7 +17,7 @@ return {
   -- A completion plugin for neovim coded in Lua
 	{
 		"hrsh7th/nvim-cmp",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		dependencies = {
 			"onsails/lspkind-nvim",
 		},

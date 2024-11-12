@@ -1,7 +1,7 @@
 -- A fork of Folke's zen mode with features from True Zen. Customized to my workflow
 return {
 	"cdmill/focus.nvim",
-	event = "BufReadPre",
+	event = "VeryLazy",
 	config = function()
 		require("focus").setup({
 			auto_zen = true,
