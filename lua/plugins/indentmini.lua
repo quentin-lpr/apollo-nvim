@@ -2,7 +2,7 @@
 return {
   "nvimdev/indentmini.nvim",
   enabled = false,
-  event = "BufReadPre",
+  event = "VeryLazy",
   config = function()
     require("indentmini").setup()
     vim.cmd.highlight("IndentLine guifg=#2c2c2c")

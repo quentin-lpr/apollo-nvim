@@ -1,6 +1,7 @@
 -- A blazing fast and easy to configure neovim statusline
 return {
 	"nvim-lualine/lualine.nvim",
+	event = "BufReadPost",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		local custom_iceberg_dark = require("lualine.themes.iceberg_dark")
@@ -36,6 +37,18 @@ return {
 			inactive_sections = {
 				lualine_x = { "" },
 			},
+		})
+
+		vim.api.nvim_create_autocmd("VimEnter", {
+			callback = function()
+				vim.opt.laststatus = 0
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("BufEnter", {
+			callback = function()
+				vim.opt.laststatus = 2
+			end,
 		})
 	end,
 }
