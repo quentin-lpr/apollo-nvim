@@ -38,5 +38,17 @@ return {
 				lualine_x = { "" },
 			},
 		})
+
+		vim.api.nvim_create_autocmd("VimEnter", {
+			callback = function()
+				vim.opt.laststatus = 0
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("BufEnter", {
+			callback = function()
+				vim.opt.laststatus = 2
+			end,
+		})
 	end,
 }
