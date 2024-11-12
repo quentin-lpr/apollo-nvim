@@ -2,14 +2,14 @@
 return {
 	{
 		"github/copilot.vim",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		config = function()
 			vim.cmd("Copilot disable")
 		end,
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		branch = "canary",
 		dependencies = {
 			{ "github/copilot.vim" },
@@ -34,7 +34,7 @@ return {
 			question_header = "  User ",
 			answer_header = "  Copilot ",
 			error_header = "  Error ",
-			auto_insert_mode = true,
+			auto_follow_cursor = false,
 			insert_at_end = true,
 			context = "buffers",
 			highlight_selection = false,
