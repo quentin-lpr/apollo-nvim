@@ -19,8 +19,8 @@ return {
         "<leader>q",
         -- { "<leader>qs", builtin.load,   mode = "n", desc = "Load last session" },
         { "<leader>qS", persistence.select, mode = "n", desc = "Select session to load" },
-        { "<leader>ql", persistence.load,   mode = "n", desc = "Load last session" },
-        { "<leader>qd", persistence.stop,   mode = "n", desc = "Stop persistence" },
+        { "<leader>ql", persistence.load, mode = "n", desc = "Load last session" },
+        { "<leader>qd", persistence.stop, mode = "n", desc = "Stop persistence" },
         icon = { icon = "", color = "white" },
       },
     })
