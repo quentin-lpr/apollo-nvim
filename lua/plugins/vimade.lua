@@ -5,5 +5,5 @@ return {
   event = "VeryLazy",
   opts = {
     fadelevel = 0.5,
-  }
+  },
 }
