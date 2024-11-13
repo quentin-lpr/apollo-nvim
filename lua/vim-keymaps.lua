@@ -11,6 +11,11 @@ function ToggleAllSyntax()
   vim.cmd("TSToggle highlight")
 end
 
+function FormatAndReindent()
+    vim.lsp.buf.format()
+    vim.cmd("normal! gg=G")
+end
+
 local wk = require("which-key")
 wk.add({
 	{ "<leader>h", ToggleAllSyntax, mode = "n", desc = "Toggle All Syntax Highlighting", icon = { icon = "󰠠", color = "white" } },
@@ -31,7 +36,7 @@ wk.add({
 	{
 		group = "Buffer",
 		"<leader>b",
-		{ "<leader>bf", vim.lsp.buf.format, mode = "n", desc = "Format buffer", icon = { icon = "󰉼", color = "white" } },
+		{ "<leader>bf", FormatAndReindent, mode = "n", desc = "Format buffer", icon = { icon = "󰉼", color = "white" } },
 		icon = { icon = "󰈔", color = "white" },
 	},
 	-- { "<M-CR>", "<Esc>gg=G", mode = { "n", "i" }, desc = "Reindent entire file", icon = { icon = "󰉼", color = "white" } },
