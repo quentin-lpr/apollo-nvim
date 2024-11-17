@@ -36,7 +36,8 @@ wk.add({
   {
     group = "Buffer",
     "<leader>b",
-    { "<leader>bf", FormatAndReindent, mode = "n", desc = "Format buffer", icon = { icon = "󰉼", color = "white" } },
+    { "<leader>bf", vim.lsp.buf.format, mode = "n", desc = "Format buffer", icon = { icon = "󰉼", color = "white" } },
+    { "<leader>bF", FormatAndReindent, mode = "n", desc = "Format + reindent buffer", icon = { icon = "󰉼", color = "white" } },
     icon = { icon = "󰈔", color = "white" },
   },
   -- { "<M-CR>", "<Esc>gg=G", mode = { "n", "i" }, desc = "Reindent entire file", icon = { icon = "󰉼", color = "white" } },
