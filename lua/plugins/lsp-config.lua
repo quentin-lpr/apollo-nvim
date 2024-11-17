@@ -35,6 +35,22 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+            local allowed_code = 2304
+            local filtered_diagnostics = {}
+
+            for _, diagnostic in ipairs(result.diagnostics) do
+              if diagnostic.code == allowed_code then
+                table.insert(filtered_diagnostics, diagnostic)
+              end
+            end
+
+            result.diagnostics = filtered_diagnostics
+
+            vim.lsp.handlers["textDocument/publishDiagnostics"](_, result, ctx, config)
+          end,
+        },
         -- Disable ts_ls diagnostics while keeping completion snippets
         -- handlers = {
         --   ["textDocument/publishDiagnostics"] = function() end,
@@ -59,7 +75,7 @@ return {
           { "<leader>lt", toggle_diagnostics, mode = "n", desc = "Toggle LSP", icon = { icon = "", color = "white" } },
           { "<leader>li", vim.lsp.buf.hover, mode = "n", desc = "Displays information", icon = { icon = "", color = "white" } },
           { "<leader>ld", vim.lsp.buf.definition, mode = "n", desc = "Jumps to definition", icon = { icon = "", color = "white" } },
-          { "<leader>la", vim.lsp.buf.code_action, mode = "n", desc = "Code actions", icon = { icon = "", color = "white" } },
+          { "<leader>la", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code actions", icon = { icon = "", color = "white" } },
           { "<leader>lr", vim.lsp.buf.rename, mode = "n", desc = "Rename", icon = { icon = "󰑕", color = "white" } },
           icon = { icon = "", color = "white" },
         },
