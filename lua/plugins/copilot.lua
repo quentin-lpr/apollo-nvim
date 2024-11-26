@@ -36,7 +36,7 @@ return {
       error_header = "  Error ",
       auto_follow_cursor = false,
       insert_at_end = true,
-      context = "buffers",
+      context = "files",
       highlight_selection = false,
     },
     config = function(_, opts)
@@ -50,6 +50,7 @@ return {
           "<leader>g",
           { "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
           icon = { icon = "󰠠", color = "white" },
+          { "<leader>ca", "<Cmd>CopilotChatAgents<CR>", mode = { "n", "v" }, desc = "Select agent", icon = { icon = "󰵰", color = "white" } },
         },
       })
     end,
