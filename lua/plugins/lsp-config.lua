@@ -78,6 +78,7 @@ return {
           { "<leader>ld", vim.lsp.buf.definition, mode = "n", desc = "Jumps to definition", icon = { icon = "", color = "white" } },
           { "<leader>la", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code actions", icon = { icon = "", color = "white" } },
           { "<leader>lr", vim.lsp.buf.rename, mode = "n", desc = "Rename", icon = { icon = "󰑕", color = "white" } },
+          { "<leader>lu", "<Cmd>Telescope lsp_references<CR>", mode = "n", desc = "Usages", icon = { icon = "", color = "white" } },
           icon = { icon = "", color = "white" },
         },
       })
