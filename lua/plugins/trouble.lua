@@ -5,7 +5,6 @@ return {
   config = function()
     require("trouble").setup({
       auto_close = true,
-      focus = true,
     })
 
     local wk = require("which-key")
