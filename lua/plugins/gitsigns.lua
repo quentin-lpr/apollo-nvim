@@ -27,7 +27,7 @@ return {
           { "<leader>gb", gitsigns.toggle_current_line_blame, mode = "n", desc = "Toggle line blame", icon = { icon = "", color = "white" } },
           { "<leader>gl", gitsigns.toggle_deleted, mode = "n", desc = "Toggle deleted diffs", icon = { icon = "", color = "white" } },
           { "<leader>gh", gitsigns.preview_hunk, mode = "n", desc = "Preview hunk", icon = { icon = "󰈈", color = "white" } },
-          { "<leader>gu", gitsigns.prev_hunk, mode = "n", desc = "Prev hunk", icon = { icon = "󰒮", color = "white" } },
+          { "<leader>gN", gitsigns.prev_hunk, mode = "n", desc = "Prev hunk", icon = { icon = "󰒮", color = "white" } },
           { "<leader>gn", gitsigns.next_hunk, mode = "n", desc = "Next hunk", icon = { icon = "󰒭", color = "white" } },
           { "<leader>gr", gitsigns.reset_hunk, mode = "n", desc = "Reset hunk", icon = { icon = "󰁯", color = "white" } },
           {
