@@ -51,6 +51,7 @@ return {
           { "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
           icon = { icon = "󰠠", color = "white" },
           { "<leader>ca", "<Cmd>CopilotChatAgents<CR>", mode = { "n", "v" }, desc = "Select agent", icon = { icon = "󰵰", color = "white" } },
+          { "<leader>cm", "<Cmd>CopilotChatModels<CR>", mode = { "n", "v" }, desc = "Select model", icon = { icon = "", color = "white" } },
         },
       })
     end,
