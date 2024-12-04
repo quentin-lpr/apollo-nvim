@@ -34,6 +34,7 @@ return {
         defaults = {
           file_ignore_patterns = {
             "node_modules",
+            "wt%-.*",
           },
           vimgrep_arguments = {
             "rg",
