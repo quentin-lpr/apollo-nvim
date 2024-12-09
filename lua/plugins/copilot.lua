@@ -36,7 +36,7 @@ return {
       error_header = "  Error ",
       auto_follow_cursor = false,
       insert_at_end = true,
-      context = "files:full",
+      context = "buffers",
       highlight_selection = false,
     },
     config = function(_, opts)
