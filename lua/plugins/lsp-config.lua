@@ -36,22 +36,22 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
-        handlers = {
-          ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
-            local allowed_code = 2304
-            local filtered_diagnostics = {}
-
-            for _, diagnostic in ipairs(result.diagnostics) do
-              if diagnostic.code == allowed_code then
-                table.insert(filtered_diagnostics, diagnostic)
-              end
-            end
-
-            result.diagnostics = filtered_diagnostics
-
-            vim.lsp.handlers["textDocument/publishDiagnostics"](_, result, ctx, config)
-          end,
-        },
+        -- handlers = {
+        --   ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+        --     local allowed_code = 2304
+        --     local filtered_diagnostics = {}
+        --
+        --     for _, diagnostic in ipairs(result.diagnostics) do
+        --       if diagnostic.code == allowed_code then
+        --         table.insert(filtered_diagnostics, diagnostic)
+        --       end
+        --     end
+        --
+        --     result.diagnostics = filtered_diagnostics
+        --
+        --     vim.lsp.handlers["textDocument/publishDiagnostics"](_, result, ctx, config)
+        --   end,
+        -- },
         -- Disable ts_ls diagnostics while keeping completion snippets
         -- handlers = {
         --   ["textDocument/publishDiagnostics"] = function() end,
