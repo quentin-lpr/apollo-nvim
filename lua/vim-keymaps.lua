@@ -1,16 +1,3 @@
--- Toggle syntax highlighting
-function ToggleAllSyntax()
-  -- Toggle regular syntax highlighting
-  if vim.g.syntax_on then
-    vim.cmd("syntax off")
-  else
-    vim.cmd("syntax on")
-  end
-
-  -- Toggle Treesitter highlighting
-  vim.cmd("TSToggle highlight")
-end
-
 function FormatAndReindent()
   vim.lsp.buf.format()
   vim.cmd("normal! gg=G")
@@ -18,8 +5,6 @@ end
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>h", ToggleAllSyntax, mode = "n", desc = "Toggle All Syntax Highlighting", icon = { icon = "󰠠", color = "white" } },
-
   -- Copy/Paste inside '*' register
   { "<C-c>", '"*y', mode = "v", desc = "Copy to clipboard", icon = { icon = "", color = "white" } },
   { "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from clipboard", icon = { icon = "", color = "white" } },
