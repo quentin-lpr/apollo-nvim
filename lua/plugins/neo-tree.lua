@@ -29,11 +29,11 @@ return {
     wk.add({
       { "<leader>e", "<Cmd>Neotree focus<CR><Esc>", mode = "n", desc = "Focus neo-tree", icon = { icon = "󰙅", color = "white" } },
     })
-    if os_name == "Windows_NT" then
+    if os_name == "Darwin" then
       wk.add({
         { "<leader>²", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
       })
-    elseif os_name == "Darwin" then
+    else
       wk.add({
         { "<leader>@", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
       })

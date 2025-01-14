@@ -52,13 +52,13 @@ return {
       { "<leader>lg", toggle_lazygit, mode = "n", desc = "Toggle Lazygit Window", icon = { icon = "", color = "white" } },
       { "<C-q>", "<C-\\><C-n>", mode = "t", desc = "Exit terminal mode" },
     })
-    if os_name == "Windows_NT" then
-      wk.add({
-        { "²", toggle_terminal, mode = { "n", "t" }, desc = "Toggle Terminal", icon = { icon = "", color = "white" } },
-      })
-    elseif os_name == "Darwin" then
+    if os_name == "Darwin" then
       wk.add({
         { "@", toggle_terminal, mode = { "n", "t" }, desc = "Toggle Terminal", icon = { icon = "", color = "white" } },
+      })
+    else
+      wk.add({
+        { "²", toggle_terminal, mode = { "n", "t" }, desc = "Toggle Terminal", icon = { icon = "", color = "white" } },
       })
     end
   end,
