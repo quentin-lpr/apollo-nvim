@@ -1,7 +1,7 @@
 -- A blazing fast and easy to configure neovim statusline
 return {
   "nvim-lualine/lualine.nvim",
-  event = "BufReadPost",
+  event = "VeryLazy",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     local custom_iceberg_dark = require("lualine.themes.iceberg_dark")
