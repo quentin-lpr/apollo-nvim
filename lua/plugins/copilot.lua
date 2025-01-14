@@ -43,15 +43,16 @@ return {
       local chat = require("CopilotChat")
       chat.setup(opts)
 
+      local telescope = require("telescope.builtin")
       local wk = require("which-key")
       wk.add({
         {
           group = "Copilot",
-          "<leader>g",
-          { "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰠠", color = "white" } },
-          icon = { icon = "󰠠", color = "white" },
+          "<leader>c",
+          { "<leader>cc", chat.toggle, mode = { "n", "v" }, desc = "Toggle Copilot Chat", icon = { icon = "󰭹", color = "white" } },
           { "<leader>ca", "<Cmd>CopilotChatAgents<CR>", mode = { "n", "v" }, desc = "Select agent", icon = { icon = "󰵰", color = "white" } },
-          { "<leader>cm", "<Cmd>CopilotChatModels<CR>", mode = { "n", "v" }, desc = "Select model", icon = { icon = "", color = "white" } },
+          { "<leader>cm", "<Cmd>CopilotChatModels<CR>", mode = { "n", "v" }, desc = "Select model", icon = { icon = " ", color = "white" } },
+          icon = { icon = " ", color = "white" },
         },
       })
     end,
