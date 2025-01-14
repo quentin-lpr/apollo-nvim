@@ -31,11 +31,11 @@ return {
     })
     if os_name == "Darwin" then
       wk.add({
-        { "<leader>²", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
+        { "<leader>@", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
       })
     else
       wk.add({
-        { "<leader>@", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
+        { "<leader>²", "<Cmd>Neotree toggle left<CR><Esc>", mode = "n", desc = "Show Nvim File Tree", icon = { icon = "󰙅", color = "white" } },
       })
     end
   end,

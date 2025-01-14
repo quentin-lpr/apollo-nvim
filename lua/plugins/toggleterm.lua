@@ -8,10 +8,8 @@ return {
     local shell
     if vim.fn.has("win32") == 1 then
       shell = "powershell"
-    elseif vim.fn.has("macunix") == 1 then
-      shell = "zsh"
     else
-      shell = "sh"
+      shell = "zsh"
     end
 
     require("toggleterm").setup({
