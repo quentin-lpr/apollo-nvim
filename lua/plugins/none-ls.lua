@@ -14,6 +14,11 @@ return {
             "195",
           },
         }),
+        null_ls.builtins.formatting.clang_format.with({
+          extra_args = {
+            "-i",
+          },
+        }),
         -- require("none-ls.diagnostics.eslint_d"),
       },
     })

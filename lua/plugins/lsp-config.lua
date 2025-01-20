@@ -18,6 +18,7 @@ return {
           "stylua",
           "tailwindcss-language-server",
           "typescript-language-server",
+          "clang-format",
         },
       })
       vim.cmd("MasonToolsClean")
