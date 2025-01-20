@@ -1,10 +1,12 @@
 return {
-	"deadbaed/vim-epitech",
+	"Nero-F/epitech.nvim",
 	event = "VeryLazy",
 	config = function()
+		require("epitech").setup()
+
 		local wk = require("which-key")
 		wk.add({
-			{ "<leader>H", "<CMD>TekAddHeader<CR>", mode = "n", desc = "Add EPITECH header", icon = { icon = "󰛼", color = "white" } },
+			{ "<leader>H", "<CMD>EpiHeader<CR>", mode = "n", desc = "Add EPITECH header", icon = { icon = "󰛼", color = "white" } },
 		})
 	end,
 }
