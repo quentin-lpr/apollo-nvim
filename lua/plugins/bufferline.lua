@@ -54,39 +54,5 @@ return {
 
     -- Hide the bufferline
     vim.opt.showtabline = 0
-
-    -- local function update_bufferline()
-    -- 	local buf_count = #vim.fn.getbufinfo({ buflisted = 1 })
-    -- 	print("add")
-    -- 	vim.opt.showtabline = (buf_count > 1) and 2 or 0
-    -- end
-
-    -- vim.api.nvim_create_autocmd("FileType", {
-    -- 	pattern = "alpha",
-    -- 	callback = function()
-    -- 		vim.opt.showtabline = 0
-    -- 	end,
-    -- })
-    --
-    -- vim.api.nvim_create_autocmd("BufUnload", {
-    -- 	buffer = 0,
-    -- 	callback = function()
-    -- 		vim.opt.showtabline = 2
-    -- 	end,
-    -- })
-
-    -- vim.api.nvim_create_autocmd("FileType", {
-    -- 	pattern = "alpha",
-    -- 	callback = function()
-    -- 		vim.opt.showtabline = 0
-    -- 	end,
-    -- })
-    --
-    -- vim.api.nvim_create_autocmd("BufUnload", {
-    -- 	buffer = 0,
-    -- 	callback = function()
-    -- 		vim.opt.showtabline = 2
-    -- 	end,
-    -- })
   end,
 }
