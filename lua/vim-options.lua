@@ -12,11 +12,3 @@ vim.cmd("set nowrap")
 vim.cmd("set laststatus=0")
 vim.cmd.colorscheme("catppuccin-frappe")
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.c", "*.h", "*.cpp", "*.hpp" },
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.softtabstop = 4
-    vim.bo.shiftwidth = 4
-	end,
-})
