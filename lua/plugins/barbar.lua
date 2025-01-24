@@ -11,12 +11,23 @@ return {
   opts = {
     auto_hide = 1,
     exclude_ft = { "alpha" },
+    icons = {
+      button = false,
+      diagnostics = {
+        [vim.diagnostic.severity.ERROR] = { enabled = true },
+        [vim.diagnostic.severity.WARN] = { enabled = false },
+        [vim.diagnostic.severity.INFO] = { enabled = false },
+        [vim.diagnostic.severity.HINT] = { enabled = false },
+      },
+      separator_at_end = false,
+    },
     sidebar_filetypes = {
       ["neo-tree"] = {
         text = "File Explorer",
         align = "center",
       },
     },
+    no_name_title = "No name"
   },
   config = function(_, opts)
     require("barbar").setup(opts)
