@@ -33,7 +33,12 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
       -- lspconfig.sourcekit.setup({ capabilities = capabilities })
-      lspconfig.clangd.setup({ capabilities = capabilities })
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+        init_options = {
+          fallbackFlags = {'--std=c++20'}
+        },
+      })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
