@@ -1,5 +1,5 @@
 return {
-	"Nero-F/epitech.nvim",
+	"quentin-lpr/epitech.nvim",
 	event = "VeryLazy",
 	config = function()
 		require("epitech").setup()
