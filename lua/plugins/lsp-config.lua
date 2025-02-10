@@ -19,6 +19,7 @@ return {
           "tailwindcss-language-server",
           "typescript-language-server",
           "clang-format",
+          "asm-lsp",
         },
       })
       vim.cmd("MasonToolsClean")
@@ -68,6 +69,7 @@ return {
       })
       lspconfig.biome.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.asm_lsp.setup({ capabilities = capabilities })
 
       local function toggle_diagnostics()
         if vim.diagnostic.is_disabled() then
