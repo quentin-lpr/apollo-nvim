@@ -36,9 +36,6 @@ return {
       -- lspconfig.sourcekit.setup({ capabilities = capabilities })
       lspconfig.clangd.setup({
         capabilities = capabilities,
-        init_options = {
-          fallbackFlags = {'--std=c++20'}
-        },
       })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({
