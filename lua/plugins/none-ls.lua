@@ -14,7 +14,11 @@ return {
             "195",
           },
         }),
-        null_ls.builtins.formatting.clang_format,
+        null_ls.builtins.formatting.clang_format.with({
+          runtime_condition = function()
+            return vim.fn.executable("clang-format") == 1
+          end,
+        }),
         -- require("none-ls.diagnostics.eslint_d"),
       },
     })
