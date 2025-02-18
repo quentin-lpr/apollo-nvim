@@ -38,6 +38,9 @@ return {
         custom_highlights = function()
           return {
             AlphaHeader = { fg = "#818596" },
+            Folded = {
+              bg = "#0f0f0f",
+            },
           }
         end,
       },
