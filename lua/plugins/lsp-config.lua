@@ -21,6 +21,7 @@ return {
           "clang-format",
           "asm-lsp",
           "cmake-language-server",
+          "codelldb",
         },
       })
       vim.cmd("MasonToolsClean")
