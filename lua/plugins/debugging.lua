@@ -17,6 +17,24 @@ return {
 					{ "<leader>dr", dap.run_to_cursor, mode = "n", desc = "Run to cursor", icon = { icon = "", color = "white" } },
 				},
 			})
+
+			dap.adapters.gdb = {
+				type = "executable",
+				command = "gdb",
+				args = { "-i", "dap" },
+			}
+			dap.configurations.asm = {
+				{
+					name = "Debug ASM",
+					type = "gdb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = true,
+				},
+			}
 		end,
 	},
 	{
