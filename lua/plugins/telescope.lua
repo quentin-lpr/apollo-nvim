@@ -77,6 +77,11 @@ return {
           group = "Telescope",
           "<leader>f",
           { "<leader>ff", telescope.find_files, mode = "n", desc = "Find files", icon = { icon = "", color = "white" } },
+          { "<leader>fF",
+            function()
+              telescope.find_files({ find_command = { "rg", "--files", "--hidden", "-g", "!.git" } })
+            end, mode = "n", desc = "Find all files", icon = { icon = "", color = "white" },
+          },
           { "<leader>fg", telescope.live_grep, mode = "n", desc = "Grep", icon = { icon = "󰍇", color = "white" } },
           { "<leader>fs", telescope.grep_string, mode = "n", desc = "Grep string", icon = { icon = "󰍇", color = "white" } },
           { "<leader>fb", telescope.buffers, mode = "n", desc = "Buffers", icon = { icon = "", color = "white" } },
