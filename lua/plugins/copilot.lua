@@ -30,7 +30,7 @@ return {
           normal = "<Esc>",
         },
       },
-      model = "claude-3.5-sonnet",
+      model = "claude-3.7-sonnet-thought",
       question_header = "  User ",
       answer_header = "  Copilot ",
       error_header = "  Error ",
