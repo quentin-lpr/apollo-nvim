@@ -3,10 +3,19 @@ function FormatAndReindent()
   vim.cmd("normal! gg=G")
 end
 
+local os_name = vim.loop.os_uname().sysname
 local wk = require("which-key")
+if os_name == "Darwin" then
+  wk.add({
+    { "<C-c>", '"*y', mode = "v", desc = "Copy to clipboard", icon = { icon = "", color = "white" } },
+  })
+else
+  wk.add({
+    { "<C-c>", '"+y', mode = "v", desc = "Copy to clipboard", icon = { icon = "", color = "white" } },
+  })
+end
 wk.add({
   -- Copy/Paste inside '*' register
-  { "<C-c>", '"*y', mode = "v", desc = "Copy to clipboard", icon = { icon = "", color = "white" } },
   { "<C-v>", '<Esc>"*p', mode = { "n", "i" }, desc = "Paste from clipboard", icon = { icon = "", color = "white" } },
 
   -- Buffer handling
