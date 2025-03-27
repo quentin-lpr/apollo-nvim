@@ -22,6 +22,8 @@ return {
           "asm-lsp",
           "cmake-language-server",
           "codelldb",
+          "docker-compose-language-service",
+          "dockerfile-language-server",
         },
       })
       vim.cmd("MasonToolsClean")
@@ -70,6 +72,8 @@ return {
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.asm_lsp.setup({ capabilities = capabilities })
       lspconfig.cmake.setup({ capabilities = capabilities })
+      lspconfig.docker_compose_language_service.setup({})
+      lspconfig.dockerls.setup({})
 
       local function toggle_diagnostics()
         if vim.diagnostic.is_disabled() then
