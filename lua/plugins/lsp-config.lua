@@ -74,8 +74,8 @@ return {
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.asm_lsp.setup({ capabilities = capabilities })
       lspconfig.cmake.setup({ capabilities = capabilities })
-      lspconfig.docker_compose_language_service.setup({})
-      lspconfig.dockerls.setup({})
+      lspconfig.docker_compose_language_service.setup({ capabilities = capabilities, filetypes = { "yaml.docker-compose" } })
+      lspconfig.dockerls.setup({ capabilities = capabilities })
 
       local function toggle_diagnostics()
         if vim.diagnostic.is_disabled() then
