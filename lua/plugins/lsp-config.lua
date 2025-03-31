@@ -2,13 +2,15 @@ return {
   -- Plugin to easily install and manage LSP servers, DAP servers, linters, and formatters
   {
     "williamboman/mason.nvim",
-    event = "VeryLazy",
+    lazy = false,
+    priority = 100,
     opts = {},
   },
   -- Install and upgrade third party tools automatically
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    event = "VeryLazy",
+    dependencies = { "williamboman/mason.nvim" },
+    event = "BufReadPre",
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
@@ -33,7 +35,7 @@ return {
   -- Quickstart configs for Nvim LSP
   {
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
