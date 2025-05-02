@@ -63,8 +63,16 @@ return {
           TelescopeResultsTitle = { fg = colors.mantle },
           TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
         }
-
         for hl, col in pairs(TelescopeColor) do
+          vim.api.nvim_set_hl(0, hl, col)
+        end
+
+        local WhichKeyColor = {
+          WhichKeyTitle = { bg = colors.pink, fg = colors.crust },
+          WhichKeyBorder = { bg = colors.crust, fg = colors.crust },
+          WhichKeyNormal = { bg = colors.crust, fg = colors.crust },
+        }
+        for hl, col in pairs(WhichKeyColor) do
           vim.api.nvim_set_hl(0, hl, col)
         end
       end,
