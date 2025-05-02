@@ -44,6 +44,30 @@ return {
           }
         end,
       },
+      config = function(_, opts)
+        require("catppuccin").setup(opts)
+
+        local colors = require("catppuccin.palettes").get_palette()
+        local TelescopeColor = {
+          TelescopeMatching = { fg = colors.flamingo },
+          TelescopeSelection = { fg = colors.text, bg = colors.crust, bold = true },
+
+          TelescopePromptPrefix = { bg = colors.mantle },
+          TelescopePromptNormal = { bg = colors.mantle },
+          TelescopeResultsNormal = { bg = colors.mantle },
+          TelescopePreviewNormal = { bg = colors.crust },
+          TelescopePromptBorder = { bg = colors.mantle, fg = colors.mantle },
+          TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+          TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+          TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
+          TelescopeResultsTitle = { fg = colors.mantle },
+          TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
+        }
+
+        for hl, col in pairs(TelescopeColor) do
+          vim.api.nvim_set_hl(0, hl, col)
+        end
+      end,
     },
   },
 }
