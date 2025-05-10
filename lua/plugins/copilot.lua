@@ -58,4 +58,53 @@ return {
       })
     end,
   },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    version = false,
+    opts = {
+      provider = "copilot",
+      copilot = {
+        model = "gemini-2.5-pro",
+      },
+    },
+    build = "make",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      "echasnovski/mini.pick",
+      "nvim-telescope/telescope.nvim",
+      "hrsh7th/nvim-cmp",
+      "ibhagwan/fzf-lua",
+      "nvim-tree/nvim-web-devicons",
+      "zbirenbaum/copilot.lua",
+      -- {
+      --   "HakonHarnes/img-clip.nvim",
+      --   event = "VeryLazy",
+      --   opts = {
+      --     -- recommended settings
+      --     default = {
+      --       embed_image_as_base64 = false,
+      --       prompt_for_file_name = false,
+      --       drag_and_drop = {
+      --         insert_mode = true,
+      --       },
+      --       -- required for Windows users
+      --       use_absolute_path = true,
+      --     },
+      --   },
+      -- },
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          -- file_types = { "markdown", "Avante" },
+          file_types = { "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
+  },
 }
