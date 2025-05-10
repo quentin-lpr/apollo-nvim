@@ -4,7 +4,7 @@ return {
     "github/copilot.vim",
     event = "VeryLazy",
     config = function()
-      vim.cmd("Copilot disable")
+      -- vim.cmd("Copilot disable")
     end,
   },
   {
@@ -30,7 +30,7 @@ return {
           normal = "<Esc>",
         },
       },
-      model = "claude-3.7-sonnet-thought",
+      model = "claude-3.7-sonnet",
       question_header = "  User ",
       answer_header = "  Copilot ",
       error_header = "  Error ",
@@ -43,7 +43,6 @@ return {
       local chat = require("CopilotChat")
       chat.setup(opts)
 
-      local telescope = require("telescope.builtin")
       local wk = require("which-key")
       wk.add({
         {
