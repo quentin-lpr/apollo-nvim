@@ -30,7 +30,7 @@ return {
           normal = "<Esc>",
         },
       },
-      model = "claude-3.7-sonnet",
+      model = "claude-sonnet-4",
       question_header = "  User ",
       answer_header = "  Copilot ",
       error_header = "  Error ",
@@ -64,7 +64,7 @@ return {
     opts = {
       provider = "copilot",
       copilot = {
-        model = "gemini-2.5-pro",
+        model = "claude-sonnet-4",
       },
     },
     build = "make",
