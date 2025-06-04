@@ -63,8 +63,11 @@ return {
     version = false,
     opts = {
       provider = "copilot",
-      copilot = {
-        model = "claude-sonnet-4",
+      auto_suggestions_provider = "copilot",
+      providers = {
+        copilot = {
+          model = "claude-sonnet-4",
+        },
       },
     },
     build = "make",
