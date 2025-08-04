@@ -30,7 +30,7 @@ return {
           normal = "<Esc>",
         },
       },
-      model = "claude-sonnet-4",
+      model = "gpt-4.1",
       question_header = "  User ",
       answer_header = "  Copilot ",
       error_header = "  Error ",
