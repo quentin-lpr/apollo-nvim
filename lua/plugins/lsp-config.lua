@@ -21,11 +21,11 @@ return {
           "tailwindcss-language-server",
           "typescript-language-server",
           "clang-format",
-          "asm-lsp",
+          -- "asm-lsp",
           "cmake-language-server",
           "codelldb",
-          "haskell-debug-adapter",
-          "haskell-language-server",
+          -- "haskell-debug-adapter",
+          -- "haskell-language-server",
           "docker-compose-language-service",
           "dockerfile-language-server",
         },
@@ -74,7 +74,7 @@ return {
       })
       lspconfig.biome.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.asm_lsp.setup({ capabilities = capabilities })
+      -- lspconfig.asm_lsp.setup({ capabilities = capabilities })
       lspconfig.cmake.setup({ capabilities = capabilities })
       lspconfig.hls.setup({ capabilities = capabilities })
       lspconfig.docker_compose_language_service.setup({ capabilities = capabilities, filetypes = { "yaml.docker-compose" } })
