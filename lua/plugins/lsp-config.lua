@@ -14,7 +14,8 @@ return {
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
-          "biome",
+          -- "biome",
+          "eslint-lsp",
           "clangd",
           "lua-language-server",
           "stylua",
@@ -72,7 +73,21 @@ return {
         --   ["textDocument/publishDiagnostics"] = function() end,
         -- },
       })
-      lspconfig.biome.setup({ capabilities = capabilities })
+      -- lspconfig.biome.setup({ capabilities = capabilities })
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        settings = {
+          workingDirectories = { mode = "auto" },
+        },
+        root_dir = require("lspconfig.util").root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json",
+          "eslint.config.js", "package.json"),
+        on_attach = function(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       -- lspconfig.asm_lsp.setup({ capabilities = capabilities })
       lspconfig.cmake.setup({ capabilities = capabilities })
