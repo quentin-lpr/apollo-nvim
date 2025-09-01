@@ -19,7 +19,8 @@ return {
             return vim.fn.executable("clang-format") == 1
           end,
         }),
-        -- require("none-ls.diagnostics.eslint_d"),
+        null_ls.builtins.formatting.prettierd,
+        require("none-ls.diagnostics.eslint_d"),
       },
     })
   end,
