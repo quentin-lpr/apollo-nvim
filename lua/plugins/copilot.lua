@@ -12,7 +12,7 @@ return {
     event = "VeryLazy",
     branch = "main",
     dependencies = {
-      { "github/copilot.vim" },
+      { "zbirenbaum/copilot.lua" },
       { "nvim-lua/plenary.nvim" },
     },
     build = "make tiktoken",
@@ -62,6 +62,7 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
+      mode = "legacy",
       provider = "copilot",
       auto_suggestions_provider = "copilot",
       providers = {
