@@ -41,59 +41,58 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-      -- lspconfig.sourcekit.setup({ capabilities = capabilities })
-      lspconfig.clangd.setup({
+
+      vim.lsp.config("*", {
+        on_attach = function(client, bufnr)
+          if client.name == "eslint" then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              command = "EslintFixAll",
+            })
+          end
+        end,
         capabilities = capabilities,
       })
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({
+
+      vim.lsp.config("clangd", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("lua_ls", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("ts_ls", {
         capabilities = capabilities,
         settings = {
           ["typescript.preferences.importModuleSpecifier"] = "non-relative",
         },
-        -- handlers = {
-        --   ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
-        --     local allowed_code = 2304
-        --     local filtered_diagnostics = {}
-        --
-        --     for _, diagnostic in ipairs(result.diagnostics) do
-        --       if diagnostic.code == allowed_code then
-        --         table.insert(filtered_diagnostics, diagnostic)
-        --       end
-        --     end
-        --
-        --     result.diagnostics = filtered_diagnostics
-        --
-        --     vim.lsp.handlers["textDocument/publishDiagnostics"](_, result, ctx, config)
-        --   end,
-        -- },
-        -- Disable ts_ls diagnostics while keeping completion snippets
-        -- handlers = {
-        --   ["textDocument/publishDiagnostics"] = function() end,
-        -- },
       })
-      -- lspconfig.biome.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({
+      vim.lsp.config("eslint", {
         capabilities = capabilities,
-        settings = {
-          workingDirectories = { mode = "auto" },
-        },
-        root_dir = require("lspconfig.util").root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json",
-          "eslint.config.js", "package.json"),
-        on_attach = function(client, bufnr)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
-        end,
+        settings = { workingDirectories = { mode = "auto" } },
+        root_markers = { ".eslintrc", ".eslintrc.js", ".eslintrc.json", "eslint.config.js", "package.json" },
       })
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      -- lspconfig.asm_lsp.setup({ capabilities = capabilities })
-      lspconfig.cmake.setup({ capabilities = capabilities })
-      lspconfig.hls.setup({ capabilities = capabilities })
-      lspconfig.docker_compose_language_service.setup({ capabilities = capabilities, filetypes = { "yaml.docker-compose" } })
-      lspconfig.dockerls.setup({ capabilities = capabilities })
+      vim.lsp.config("tailwindcss", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("cmake", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("docker_compose_language_service", {
+        capabilities = capabilities,
+        filetypes = { "yaml.docker-compose" },
+      })
+      vim.lsp.config("dockerls", {
+        capabilities = capabilities,
+      })
+
+      vim.lsp.enable("clangd")
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("eslint")
+      vim.lsp.enable("tailwindcss")
+      vim.lsp.enable("cmake")
+      vim.lsp.enable("docker_compose_language_service")
+      vim.lsp.enable("dockerls")
 
       local function toggle_diagnostics()
         if vim.diagnostic.is_disabled() then
