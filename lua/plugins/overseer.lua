@@ -8,7 +8,8 @@ return {
 			{
 				group = "Run tasks",
 				"<leader>r",
-				{ "<leader>rb", "<CMD>OverseerBuild<CR><Esc>", mode = "n", desc = "Build task", icon = { icon = "", color = "white" } },
+				{ "<leader>rb", "<CMD>OverseerBuild<CR><Esc>", mode = "n", desc = "Build", icon = { icon = "", color = "white" } },
+				{ "<leader>rr", "<CMD>OverseerRun<CR><Esc>", mode = "n", desc = "Run", icon = { icon = "", color = "white" } },
 				{ "<leader>rt", "<CMD>OverseerToggle<CR><Esc>", mode = "n", desc = "Toggle panel", icon = { icon = "", color = "white" } },
 				{ "<leader>rs", "<CMD>OverseerSaveBundle<CR><Esc>", mode = "n", desc = "Save tasks", icon = { icon = "", color = "white" } },
 				{ "<leader>rl", "<CMD>OverseerLoadBundle!<CR><Esc>", mode = "n", desc = "Load tasks", icon = { icon = "󰈞", color = "white" } },
