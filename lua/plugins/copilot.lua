@@ -38,6 +38,9 @@ return {
       insert_at_end = true,
       context = "buffers",
       highlight_selection = false,
+      sticky = {
+        "#buffer:listed",
+      },
     },
     config = function(_, opts)
       local chat = require("CopilotChat")
