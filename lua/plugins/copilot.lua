@@ -1,9 +1,37 @@
 -- Neovim plugin for GitHub Copilot
 return {
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
     event = "VeryLazy",
-    config = function()
+    dependencies = "copilotlsp-nvim/copilot-lsp",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = false,
+        hide_during_completion = true,
+        debounce = 50,
+        trigger_on_accept = true,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = "<M-Right>",
+          accept_line = false,
+          next = "<M-j>",
+          prev = "<M-k>",
+          dismiss = false,
+        },
+      },
+      -- nes = {
+      --   enabled = true,
+      --   auto_trigger = false,
+      --   keymap = {
+      --     accept_and_goto = false,
+      --     accept = "<Tab>",
+      --     dismiss = "<ESC>",
+      --   },
+      -- },
+    },
+    config = function(_, opts)
+      require("copilot").setup(opts)
       -- vim.cmd("Copilot disable")
     end,
   },
@@ -65,7 +93,6 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      mode = "legacy",
       provider = "copilot",
       auto_suggestions_provider = "copilot",
       providers = {
