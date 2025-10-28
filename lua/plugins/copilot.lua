@@ -32,7 +32,6 @@ return {
     },
     config = function(_, opts)
       require("copilot").setup(opts)
-      -- vim.cmd("Copilot disable")
     end,
   },
   {
@@ -110,7 +109,6 @@ return {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
       "echasnovski/mini.pick",
       "nvim-telescope/telescope.nvim",
       "hrsh7th/nvim-cmp",
