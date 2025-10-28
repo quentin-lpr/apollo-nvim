@@ -56,6 +56,11 @@ return {
 
       vim.lsp.config("clangd", {
         capabilities = capabilities,
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--enable-config",
+        },
       })
       vim.lsp.config("lua_ls", {
         capabilities = capabilities,
