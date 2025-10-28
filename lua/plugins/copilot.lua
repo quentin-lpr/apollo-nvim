@@ -100,6 +100,9 @@ return {
           model = "gpt-4.1",
         },
       },
+      behaviour = {
+        auto_approve_tool_permissions = false,
+      },
     },
     build = "make",
     dependencies = {
