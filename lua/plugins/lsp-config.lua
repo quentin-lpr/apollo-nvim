@@ -29,6 +29,7 @@ return {
           -- "haskell-language-server",
           "docker-compose-language-service",
           "dockerfile-language-server",
+          "jdtls",
         },
       })
       vim.cmd("MasonToolsClean")
@@ -98,6 +99,7 @@ return {
       vim.lsp.enable("cmake")
       vim.lsp.enable("docker_compose_language_service")
       vim.lsp.enable("dockerls")
+      vim.lsp.enable("jdtls")
 
       local function toggle_diagnostics()
         if vim.diagnostic.is_disabled() then
