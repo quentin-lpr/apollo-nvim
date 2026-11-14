@@ -3,7 +3,7 @@ return {
   "rcarriga/nvim-notify",
   event = "VeryLazy",
   config = function()
-    vim.notify = require("notify").setup({
+    require("notify").setup({
       fps = 60,
       level = 2,
       minimum_width = 30,
@@ -19,6 +19,7 @@ return {
         TRACE = "",
       },
     })
+    vim.notify = require("notify")
     vim.api.nvim_create_autocmd("ColorScheme", {
       pattern = "*",
       callback = function()
