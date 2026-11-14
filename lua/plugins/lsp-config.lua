@@ -102,11 +102,7 @@ return {
       vim.lsp.enable("jdtls")
 
       local function toggle_diagnostics()
-        if vim.diagnostic.is_disabled() then
-          vim.diagnostic.enable()
-        else
-          vim.diagnostic.disable()
-        end
+        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
       end
 
       local wk = require("which-key")
