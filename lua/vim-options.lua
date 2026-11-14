@@ -13,8 +13,24 @@ vim.cmd("set laststatus=0")
 vim.cmd.colorscheme("catppuccin-frappe")
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "docker-compose.yml", "docker-compose.yaml" },
-	callback = function()
-		vim.bo.filetype = "yaml.docker-compose"
-	end,
+  pattern = { "*.yml" },
+  callback = function()
+    vim.bo.filetype = "yaml"
+  end,
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "docker-compose.yml", "docker-compose.yaml" },
+  callback = function()
+    vim.bo.filetype = "yaml.docker-compose"
+  end,
+})
+
+local group = vim.api.nvim_create_augroup("RestoreCursorShapeOnExit", { clear = true })
+vim.api.nvim_create_autocmd("VimLeave", {
+  group = group,
+  callback = function()
+    vim.opt.guicursor = "a:ver1"
+  end,
+})
+
